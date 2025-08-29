@@ -11,6 +11,8 @@ import {
   Wallet,
 } from "lucide-react";
 import formatCurrency from "@/utils/format_currency";
+import GraphOverviewCard from "@/components/graph_overview_card/graph_overview_card";
+import LastTransactionsCard from "@/components/last_transactions_card/last_transactions_card";
 
 export default function Dashboard() {
   return (
@@ -73,6 +75,10 @@ export default function Dashboard() {
             </CardTitle>
           </CardHeader>
         </Card>
+      </section>
+      <section className="flex flex-col md:flex-row gap-4 mt-4">
+        <GraphOverviewCard />
+        <LastTransactionsCard />
       </section>
     </div>
   );
