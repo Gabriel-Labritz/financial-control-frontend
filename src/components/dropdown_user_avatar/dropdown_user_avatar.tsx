@@ -17,10 +17,14 @@ export default function DropdownUserAvatar() {
       <DropdownMenuContent className="mr-4">
         <DropdownMenuLabel className="font-semibold">Conta</DropdownMenuLabel>
         <DropdownMenuItem>
-          Perfil <User className="ml-auto" color="var(--color-foreground)" />
+          <span className="flex gap-2 items-center">
+            <User color="var(--color-foreground)" /> Perfil
+          </span>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          Sair <LogOut className="ml-auto" color="var(--color-foreground)" />
+          <span className="flex gap-2 items-center">
+            <LogOut color="var(--color-foreground)" /> Sair
+          </span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
