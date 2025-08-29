@@ -7,17 +7,38 @@ import {
 import {
   BanknoteArrowDown,
   BanknoteArrowUp,
+  ChartNoAxesCombined,
   PiggyBank,
   Wallet,
 } from "lucide-react";
 import formatCurrency from "@/utils/format_currency";
 import GraphOverviewCard from "@/components/graph_overview_card/graph_overview_card";
 import LastTransactionsCard from "@/components/last_transactions_card/last_transactions_card";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import TransactionModal from "@/components/transaction_modal/transaction_modal";
 
 export default function Dashboard() {
   return (
     <div className="w-full min-w-full p-4">
-      <div className="">Button area</div>
+      <div className="flex justify-between items-center">
+        <div className="flex items-center gap-2 select-none">
+          <ChartNoAxesCombined size={25} />
+          <h2 className="text-xl sm:text-2xl font-sans tracking-tighter">
+            Dashboard
+          </h2>
+        </div>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="default" type="button" className="h-12">
+              Nova Transação
+            </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <TransactionModal />
+          </DialogContent>
+        </Dialog>
+      </div>
       <section className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
         <Card>
           <CardHeader>
