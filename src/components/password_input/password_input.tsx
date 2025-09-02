@@ -37,6 +37,7 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
           className="absolute right-1 top-1/2"
         >
           {isVisible ? <EyeClosed /> : <Eye />}
+          <p className="sr-only">Visualizar senha</p>
         </Button>
       </div>
     );
