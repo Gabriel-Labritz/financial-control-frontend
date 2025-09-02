@@ -1,5 +1,5 @@
 import LogoSite from "@/components/logo_site/logo_site";
-import SignInForm from "@/components/signin_form/signin_form";
+import SignUpForm from "@/components/sign_up-form/sign_up_form";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -12,7 +12,7 @@ import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, DoorOpen } from "lucide-react";
 import Link from "next/link";
 
-export default function SignIn() {
+export default function SignUp() {
   return (
     <Card className="w-full max-w-sm md:max-w-lg py-8 shadow-none">
       <CardHeader className="select-none">
@@ -24,26 +24,27 @@ export default function SignIn() {
         </Button>
         <LogoSite />
         <CardTitle className="mt-5 text-2xl font-sans font-medium tracking-tighter">
-          Entrar na sua conta
+          Crie sua conta
         </CardTitle>
         <CardDescription className="font-sans text-sm leading-4">
-          Por favor entre com suas informações abaixo para acessar a sua conta.
+          Por favor entre com suas informações abaixo para cadastrar a sua
+          conta.
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <SignInForm />
+        <SignUpForm />
         <div className="mt-10">
           <Separator />
         </div>
         <div className="flex justify-center mt-4">
           <p className="text-sm text-muted-foreground font-sans">
-            Não possui uma conta ?
+            Já possui uma conta ?
             <Link
-              href="/signup"
+              href="/signin"
               className="flex justify-center items-center gap-2"
             >
               <span className="text-primary font-sans font-semibold tracking-tighter hover:underline">
-                Cadastre - se
+                Entrar
               </span>
               <DoorOpen size={18} color="var(--color-primary)" />
             </Link>
