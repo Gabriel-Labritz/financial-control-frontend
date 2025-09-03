@@ -1,4 +1,4 @@
-import { ChartArea, DollarSign, Home, Search } from "lucide-react";
+import { ChartArea, CircleDollarSign, Home, Search } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -22,7 +22,7 @@ export default function SidebarApp() {
     {
       title: "Transações",
       url: "#",
-      icon: DollarSign,
+      icon: CircleDollarSign,
     },
     {
       title: "Buscar",
@@ -32,14 +32,14 @@ export default function SidebarApp() {
   ];
 
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar collapsible="icon" className="font-sans">
       <SidebarHeader className="flex items-center">
         <ChartArea size={25} color="var(--color-primary)" />
         <SidebarSeparator />
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className="font-sans font-semibold">
+          <SidebarGroupLabel className="font-semibold">
             Explorar
           </SidebarGroupLabel>
           <SidebarMenu>
@@ -48,7 +48,7 @@ export default function SidebarApp() {
                 <SidebarMenuButton asChild>
                   <Link href={item.url}>
                     <item.icon></item.icon>
-                    <span className="font-sans font-medium">{item.title}</span>
+                    <span className="font-semibold">{item.title}</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>

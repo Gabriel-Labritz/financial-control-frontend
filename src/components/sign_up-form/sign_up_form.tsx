@@ -32,7 +32,7 @@ export default function SignUpForm() {
     <form method="post" onSubmit={handleSubmit(onSubmit)}>
       <div className="grid gap-4">
         <div className="grid gap-2">
-          <Label htmlFor="nickName" className="text-sm lg:text-base font-sans">
+          <Label htmlFor="nickName" className="text-sm font-sans">
             <User size={18} />
             Apelido*
           </Label>
@@ -49,7 +49,7 @@ export default function SignUpForm() {
           )}
         </div>
         <div className="grid gap-2">
-          <Label htmlFor="email" className="text-sm lg:text-base font-sans">
+          <Label htmlFor="email" className="text-sm">
             <Mail size={18} />
             Email*
           </Label>
@@ -80,7 +80,7 @@ export default function SignUpForm() {
             Aguarde...
           </Button>
         ) : (
-          <Button type="submit" className="mt-6 w-full h-14 font-sans">
+          <Button type="submit" className="mt-6 w-full h-14">
             Cadastre - se
           </Button>
         )}

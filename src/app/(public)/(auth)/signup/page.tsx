@@ -14,7 +14,7 @@ import Link from "next/link";
 
 export default function SignUp() {
   return (
-    <Card className="w-full max-w-sm md:max-w-lg py-8 shadow-none">
+    <Card className="w-full max-w-sm md:max-w-lg py-8 shadow-none border-none">
       <CardHeader className="select-none">
         <Button variant="ghost" size="icon">
           <Link href="#">
@@ -27,8 +27,7 @@ export default function SignUp() {
           Crie sua conta
         </CardTitle>
         <CardDescription className="font-sans text-sm leading-4">
-          Por favor entre com suas informações abaixo para cadastrar a sua
-          conta.
+          Por favor entre com suas informações abaixo para criar a sua conta.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -43,7 +42,7 @@ export default function SignUp() {
               href="/signin"
               className="flex justify-center items-center gap-2"
             >
-              <span className="text-primary font-sans font-semibold tracking-tighter hover:underline">
+              <span className="text-primary font-semibold tracking-tighter hover:underline">
                 Entrar
               </span>
               <DoorOpen size={18} color="var(--color-primary)" />

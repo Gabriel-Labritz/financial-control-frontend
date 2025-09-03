@@ -19,7 +19,7 @@ export default async function RootLayout({
   return (
     <SidebarProvider defaultOpen={defaultOpen}>
       <SidebarApp />
-      <main className="w-full">
+      <main className="w-full font-sans">
         <MainHeader />
         {children}
       </main>

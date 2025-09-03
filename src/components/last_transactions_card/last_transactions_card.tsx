@@ -8,7 +8,7 @@ export default function LastTransactionsCard() {
   return (
     <Card className="flex-1">
       <CardHeader>
-        <CardDescription className="flex items-center text-sm sm:text-base font-sans">
+        <CardDescription className="flex items-center text-sm font-medium select-none">
           Últimas transações
           <Link href="#" className="ml-auto">
             <Button type="button" variant="ghost">
@@ -20,22 +20,28 @@ export default function LastTransactionsCard() {
       </CardHeader>
       <CardContent>
         <article className="flex justify-between items-center border-b p-2">
-          <p className="font-sans font-semibold text-sm lg:text-base">
-            Uber Black
+          <p className="font-semibold text-sm lg:text-base">
+            Venda do video game
           </p>
           <div>
-            <p className="font-sans font-semibold text-sm lg:text-base">
-              {formatCurrency(20)}
+            <p className="font-semibold text-sm lg:text-base text-chart-2">
+              +{formatCurrency(950.0)}
             </p>
           </div>
         </article>
         <article className="flex justify-between items-center border-b p-2">
-          <p className="font-sans font-semibold text-sm lg:text-base">
-            Convênio médico
-          </p>
+          <p className="font-semibold text-sm lg:text-base">Uber Black</p>
           <div>
-            <p className="font-sans font-semibold text-sm lg:text-base">
-              {formatCurrency(190.5)}
+            <p className="font-semibold text-sm lg:text-base text-chart-1">
+              -{formatCurrency(20)}
+            </p>
+          </div>
+        </article>
+        <article className="flex justify-between items-center border-b p-2">
+          <p className="font-semibold text-sm lg:text-base">Convênio médico</p>
+          <div>
+            <p className="font-semibold text-sm lg:text-base text-chart-1">
+              -{formatCurrency(190.5)}
             </p>
           </div>
         </article>

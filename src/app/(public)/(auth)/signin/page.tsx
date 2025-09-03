@@ -14,7 +14,7 @@ import Link from "next/link";
 
 export default function SignIn() {
   return (
-    <Card className="w-full max-w-sm md:max-w-lg py-8 shadow-none">
+    <Card className="w-full max-w-sm md:max-w-lg py-8 shadow-none border-none">
       <CardHeader className="select-none">
         <Button variant="ghost" size="icon">
           <Link href="#">
@@ -42,7 +42,7 @@ export default function SignIn() {
               href="/signup"
               className="flex justify-center items-center gap-2"
             >
-              <span className="text-primary font-sans font-semibold tracking-tighter hover:underline">
+              <span className="text-primary font-semibold tracking-tighter hover:underline">
                 Cadastre - se
               </span>
               <DoorOpen size={18} color="var(--color-primary)" />

@@ -14,17 +14,13 @@ export default function DropdownUserAvatar() {
       <DropdownMenuTrigger asChild className="hover:cursor-pointer">
         <UserAvatar />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="mr-4">
-        <DropdownMenuLabel className="font-semibold">Conta</DropdownMenuLabel>
-        <DropdownMenuItem>
-          <span className="flex gap-2 items-center">
-            <User color="var(--color-foreground)" /> Perfil
-          </span>
+      <DropdownMenuContent className="mr-4 font-sans">
+        <DropdownMenuLabel>Conta</DropdownMenuLabel>
+        <DropdownMenuItem className="font-medium font-sans text-[12px]">
+          <User /> Perfil
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <span className="flex gap-2 items-center">
-            <LogOut color="var(--color-foreground)" /> Sair
-          </span>
+        <DropdownMenuItem className="font-medium font-sans text-[12px]">
+          <LogOut /> Sair
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

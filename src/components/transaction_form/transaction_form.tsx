@@ -76,10 +76,10 @@ export default function TransactionForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} method="post">
+    <form onSubmit={handleSubmit(onSubmit)} method="post" className="font-sans">
       <div className="grid gap-4">
         <div className="grid gap-2">
-          <Label htmlFor="title" className="text-sm lg:text-base font-sans">
+          <Label htmlFor="title" className="text-sm">
             Título*
           </Label>
           <Input
@@ -88,12 +88,12 @@ export default function TransactionForm() {
             placeholder="ex: Uber black"
             {...register("title")}
             aria-invalid={!!errors.title}
-            className="py-5 text-sm font-sans"
+            className="py-5 text-sm"
           />
           {errors.title && <ErrorMessageInput message={errors.title.message} />}
         </div>
         <div className="grid gap-2">
-          <Label htmlFor="amount" className="text-sm lg:text-base font-sans">
+          <Label htmlFor="amount" className="text-sm">
             Valor*
           </Label>
           <Input
@@ -103,14 +103,14 @@ export default function TransactionForm() {
             step="0.01"
             {...register("amount", { valueAsNumber: true })}
             aria-invalid={!!errors.amount}
-            className="py-5 max-w-[180px] text-sm font-sans"
+            className="py-5 max-w-[180px] text-sm"
           />
           {errors.amount && (
             <ErrorMessageInput message={errors.amount.message} />
           )}
         </div>
         <div className="grid gap-2">
-          <Label htmlFor="type" className="text-sm lg:text-base font-sans">
+          <Label htmlFor="type" className="text-sm">
             Tipo*
           </Label>
           <Controller
@@ -122,7 +122,7 @@ export default function TransactionForm() {
                   id="type"
                   size="default"
                   aria-invalid={!!errors.type}
-                  className="px-3 py-5 w-[180px] max-w-[180px] text-sm font-sans"
+                  className="px-3 py-5 w-[180px] max-w-[180px] text-sm"
                 >
                   <SelectValue placeholder="ex: Saída" />
                 </SelectTrigger>
@@ -141,7 +141,7 @@ export default function TransactionForm() {
           {errors.type && <ErrorMessageInput message={errors.type.message} />}
         </div>
         <div className="grid gap-2">
-          <Label htmlFor="category" className="text-sm lg:text-base font-sans">
+          <Label htmlFor="category" className="text-sm">
             Categoria*
           </Label>
           <Controller
@@ -153,7 +153,7 @@ export default function TransactionForm() {
                   id="category"
                   size="default"
                   aria-invalid={!!errors.category}
-                  className="px-3 py-5 w-[180px] max-w-[180px] text-sm font-sans"
+                  className="px-3 py-5 w-[180px] max-w-[180px] text-sm"
                 >
                   <SelectValue placeholder="ex: Transporte" />
                 </SelectTrigger>
@@ -173,10 +173,7 @@ export default function TransactionForm() {
           )}
         </div>
         <div className="grid gap-2">
-          <Label
-            htmlFor="description"
-            className="text-sm lg:text-base font-sans"
-          >
+          <Label htmlFor="description" className="text-sm">
             Descrição
           </Label>
           <Textarea
@@ -184,7 +181,7 @@ export default function TransactionForm() {
             placeholder="Adicione uma descrição..."
             maxLength={255}
             {...register("description")}
-            className="text-sm font-sans"
+            className="text-sm"
           />
         </div>
         <DialogFooter>

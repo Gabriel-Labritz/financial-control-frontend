@@ -14,10 +14,7 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
 
     return (
       <div className="relative">
-        <Label
-          htmlFor="password"
-          className="text-sm lg:text-base font-sans mb-2"
-        >
+        <Label htmlFor="password" className="text-sm mb-2 font-sans">
           <Lock size={18} />
           Senha*
         </Label>
@@ -26,7 +23,7 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
           ref={ref}
           type={isVisible ? "text" : "password"}
           placeholder="Informe sua senha..."
-          className="py-6 pr-10 text-sm font-sans "
+          className="py-6 pr-10 text-sm font-sans"
           {...props}
         />
         <Button

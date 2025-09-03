@@ -36,8 +36,8 @@ export default function GraphOverviewCard() {
   return (
     <Card className="w-full md:w-1/2 md:max-w-[600px]">
       <CardHeader className="select-none">
-        <CardDescription className="flex items-center text-sm sm:text-base font-sans">
-          Overview
+        <CardDescription className="flex items-center text-sm font-medium">
+          Overview Mensal
           <ChartNoAxesColumnIncreasing
             className="ml-auto size-5 sm:size-6"
             color="var(--color-foreground)"

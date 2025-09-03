@@ -1,5 +1,5 @@
 "use client";
-import { Moon, Sun } from "lucide-react";
+import { Monitor, Moon, Sun } from "lucide-react";
 import { Button } from "../ui/button";
 import {
   DropdownMenu,
@@ -24,20 +24,23 @@ export default function ToogleThemeBtn() {
       <DropdownMenuContent className="mr-4">
         <DropdownMenuItem
           onClick={() => setTheme("light")}
-          className="font-medium cursor-pointer"
+          className="font-medium font-sans text-[12px]"
         >
+          <Sun />
           Claro
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("dark")}
-          className="font-medium cursor-pointer"
+          className="font-medium font-sans text-[12px]"
         >
+          <Moon />
           Escuro
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("system")}
-          className="font-medium cursor-pointer"
+          className="font-medium font-sans text-[12px]"
         >
+          <Monitor />
           Sistema
         </DropdownMenuItem>
       </DropdownMenuContent>

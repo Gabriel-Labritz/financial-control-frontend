@@ -32,7 +32,7 @@ export default function SignInForm() {
     <form method="post" onSubmit={handleSubmit(onSubmit)}>
       <div className="grid gap-4">
         <div className="grid gap-2">
-          <Label htmlFor="email" className="text-sm lg:text-base font-sans">
+          <Label htmlFor="email" className="text-sm font-sans">
             <Mail size={18} />
             Email*
           </Label>
@@ -58,12 +58,12 @@ export default function SignInForm() {
           )}
         </div>
         {isLoading ? (
-          <Button type="submit" className="mt-6 w-full h-14 font-sans">
+          <Button type="submit" className="mt-6 w-full h-14">
             <LoaderCircle className="animate-spin" />
             Aguarde...
           </Button>
         ) : (
-          <Button type="submit" className="mt-6 w-full h-14 font-sans">
+          <Button type="submit" className="mt-6 w-full h-14">
             Entrar
           </Button>
         )}
