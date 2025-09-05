@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { redirect } from "next/navigation";
 
 // components
 import { LoaderCircle, Mail, User } from "lucide-react";
@@ -11,6 +12,8 @@ import { Button } from "../ui/button";
 import PasswordInput from "../password_input/password_input";
 import ErrorMessageInput from "../error_message_input/error_message_input";
 import { SignUpShema, signUpShema } from "@/schemas/sign_up_schema";
+import { createUserAccount } from "@/actions/auth/signup.actions";
+import { toast } from "react-hot-toast";
 
 export default function SignUpForm() {
   const {
@@ -22,9 +25,18 @@ export default function SignUpForm() {
   });
   const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = (formData: SignUpShema) => {
+  const onSubmit = async (formData: SignUpShema) => {
     setIsLoading(true);
-    console.log(formData);
+    const result = await createUserAccount(formData);
+
+    if (result.success) {
+      toast.success(result.data.message);
+      setTimeout(() => {
+        redirect("/");
+      }, 2000);
+    } else {
+      toast.error(result.error.message);
+    }
     setIsLoading(false);
   };
 
@@ -75,7 +87,11 @@ export default function SignUpForm() {
           )}
         </div>
         {isLoading ? (
-          <Button type="submit" className="mt-6 w-full h-14 font-sans">
+          <Button
+            type="submit"
+            className="mt-6 w-full h-14 font-sans"
+            disabled={isLoading}
+          >
             <LoaderCircle className="animate-spin" />
             Aguarde...
           </Button>

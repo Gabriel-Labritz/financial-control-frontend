@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import ScreenSvg from "@/assets/screen.svg";
+import { Toaster } from "react-hot-toast";
 export const metadata: Metadata = {
   title: "FinanCash | Autenticação",
 };
@@ -13,6 +14,7 @@ export default function AuthLayout({
   return (
     <main className="flex w-full min-h-screen overflow-x-hidden p-4 font-sans">
       <div className="flex-1 xl:max-w-1/3">
+        <Toaster position="top-center" />
         <div className="w-full min-h-full flex flex-col justify-center items-center">
           {children}
         </div>

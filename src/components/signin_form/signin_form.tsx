@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
+import { redirect } from "next/navigation";
 // components
 import { LoaderCircle, Mail } from "lucide-react";
 import { Label } from "../ui/label";
@@ -11,6 +11,8 @@ import { Button } from "../ui/button";
 import PasswordInput from "../password_input/password_input";
 import { signInShema, SignInShema } from "@/schemas/sign-in_schema";
 import ErrorMessageInput from "../error_message_input/error_message_input";
+import { signInUserAccount } from "@/actions/auth/signin.actions";
+import toast from "react-hot-toast";
 
 export default function SignInForm() {
   const {
@@ -22,9 +24,18 @@ export default function SignInForm() {
   });
   const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = (formData: SignInShema) => {
+  const onSubmit = async (formData: SignInShema) => {
     setIsLoading(true);
-    console.log(formData);
+    const result = await signInUserAccount(formData);
+
+    if (result.success) {
+      toast.success(result.data.message);
+      setTimeout(() => {
+        redirect("/");
+      }, 2000);
+    } else {
+      toast.error(result.error.message);
+    }
     setIsLoading(false);
   };
 
