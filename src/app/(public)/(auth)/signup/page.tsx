@@ -23,7 +23,10 @@ export default function SignUp() {
       <div className="mt-4">
         <p className="mt-5 text-center text-sm text-muted-foreground font-normal">
           Já tem uma conta?{" "}
-          <Link href="#" className="font-semibold text-primary hover:underline">
+          <Link
+            href="/signin"
+            className="font-semibold text-primary hover:underline"
+          >
             Entrar
           </Link>
         </p>

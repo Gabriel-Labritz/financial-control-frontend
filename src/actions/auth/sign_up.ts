@@ -1,6 +1,6 @@
 "use server";
 
-import { SignUpShema } from "@/schemas/auth/sign_up.schema";
+import { SignUpSchema } from "@/schemas/auth/sign_up.schema";
 import { APIResponseError } from "../types/types";
 
 type APISignUpResponse = {
@@ -9,7 +9,7 @@ type APISignUpResponse = {
 
 const API_BASE_URL = process.env.API_URL;
 
-export async function signup(formData: SignUpShema) {
+export async function signup(formData: SignUpSchema) {
   try {
     const { confirmPassword, ...userData } = formData;
 
