@@ -7,35 +7,11 @@ import {
   SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { ChartArea, Home, Landmark, Search, Settings } from "lucide-react";
-import Link from "next/link";
+import { ChartArea } from "lucide-react";
+import SidebarNav from "../SidebarNav";
 
 export default function AppSidebar() {
-  const items = [
-    {
-      title: "Início",
-      url: "#",
-      icon: Home,
-    },
-    {
-      title: "Transações",
-      url: "#",
-      icon: Landmark,
-    },
-    {
-      title: "Buscar",
-      url: "#",
-      icon: Search,
-    },
-    {
-      title: "Configurações",
-      url: "#",
-      icon: Settings,
-    },
-  ];
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader>
@@ -59,16 +35,7 @@ export default function AppSidebar() {
           <SidebarGroupLabel>Navegar</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <Link href={item.url}>
-                      <item.icon color="var(--color-primary)" />
-                      <span>{item.title}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              <SidebarNav />
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
