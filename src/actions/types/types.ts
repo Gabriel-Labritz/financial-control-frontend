@@ -22,3 +22,21 @@ export type APIAllTransactionsResponse = {
   userTransactions: Transaction[];
   pagination: Pagination;
 };
+
+export type APIGetTransactionByIdResponse = {
+  message: string;
+  transaction: Transaction;
+};
+
+export type APIUpdateTransactionResponse = {
+  message: string;
+  transaction: Transaction;
+};
+
+export type APICraetedTransactionResponse = {
+  message: string;
+  newTransaction: Transaction;
+  user: {
+    id: string;
+  };
+};

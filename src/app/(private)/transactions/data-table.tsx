@@ -24,6 +24,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import CreateTransactionModal from "@/_components/CreateTransactionDialog";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -59,14 +61,26 @@ export function DataTable<TData, TValue>({
 
   return (
     <>
-      <Input
-        placeholder="Buscar..."
-        value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
-        onChange={(event) =>
-          table.getColumn("title")?.setFilterValue(event.target.value)
-        }
-        className="w-full md:max-w-sm mb-5 text-sm bg-primary-foreground"
-      />
+      <div className="flex flex-col md:flex-row gap-2">
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button type="button" className="h-12">
+              Nova Transação
+            </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <CreateTransactionModal />
+          </DialogContent>
+        </Dialog>
+        <Input
+          placeholder="Buscar por transações..."
+          value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
+          onChange={(event) =>
+            table.getColumn("title")?.setFilterValue(event.target.value)
+          }
+          className="w-full md:max-w-sm mb-5 text-sm bg-primary-foreground"
+        />
+      </div>
       <div className="overflow-hidden rounded-lg bg-primary-foreground p-6">
         <Table>
           <TableHeader>

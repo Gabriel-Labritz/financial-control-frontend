@@ -41,7 +41,7 @@ export default function DeleteTransactionAlertDialog({
         Você tem certeza que gostaria de excluir essa transação?
       </AlertDialogTitle>
       <AlertDialogDescription>
-        Essa ação não poderá sem revertida e irá apagar permanentemente essa
+        Essa ação não poderá ser revertida e irá apagar permanentemente essa
         transação, deseja continuar?
       </AlertDialogDescription>
       <AlertDialogFooter>

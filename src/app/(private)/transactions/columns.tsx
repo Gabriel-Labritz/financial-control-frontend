@@ -125,9 +125,13 @@ export const columns: ColumnDef<Transaction>[] = [
     },
     cell: ({ row }) => {
       const date = new Date(row.getValue("createdAt"));
-      const formatedDate = date.toLocaleDateString("pt-BR");
+      const formatedDate = new Intl.DateTimeFormat("pt-BR", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      }).format(date);
 
-      return <div>{formatedDate}</div>;
+      return <div className="text-muted-foreground">{formatedDate}</div>;
     },
   },
   {
@@ -147,14 +151,14 @@ export const columns: ColumnDef<Transaction>[] = [
             <DropdownMenuLabel>Ações</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <Dialog>
-              <DialogTrigger>
+              <DialogTrigger className="w-full">
                 <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
                   <Pencil />
                   Editar
                 </DropdownMenuItem>
               </DialogTrigger>
               <DialogContent>
-                <UpdateTransactionDialog />
+                <UpdateTransactionDialog id={transaction.id} />
               </DialogContent>
             </Dialog>
             <AlertDialog>
