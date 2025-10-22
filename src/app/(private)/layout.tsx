@@ -1,3 +1,4 @@
+import AppFooter from "@/_components/Footer";
 import Header from "@/_components/Header";
 import AppSidebar from "@/_components/Sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
@@ -17,12 +18,15 @@ export default async function PrivateLayout({
   const defaultOpen = cookieStore.get("sidebar_state")?.value === "true";
 
   return (
-    <SidebarProvider defaultOpen={defaultOpen}>
-      <AppSidebar />
-      <main className="w-full overflow-x-hidden">
-        <Header />
-        {children}
-      </main>
-    </SidebarProvider>
+    <>
+      <SidebarProvider defaultOpen={defaultOpen}>
+        <AppSidebar />
+        <main className="w-full overflow-x-hidden relative">
+          <Header />
+          {children}
+          <AppFooter />
+        </main>
+      </SidebarProvider>
+    </>
   );
 }

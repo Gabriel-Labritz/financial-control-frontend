@@ -40,3 +40,9 @@ export type APICraetedTransactionResponse = {
     id: string;
   };
 };
+
+export type APISummaryBalanceResponse = {
+  totalIncomes: number;
+  totalExpenses: number;
+  totalBalance: number;
+};
