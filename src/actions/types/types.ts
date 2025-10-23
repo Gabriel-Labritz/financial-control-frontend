@@ -52,3 +52,8 @@ export type APIMonthlyBalanceResponse = {
   totalIncomes: number;
   totalExpenses: number;
 };
+
+export type APILastTransactionsResponse = {
+  message: string;
+  userTransactions: Transaction[];
+};

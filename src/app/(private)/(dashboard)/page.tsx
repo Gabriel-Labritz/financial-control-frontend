@@ -1,9 +1,13 @@
 import AnalyticsCards from "@/_components/AnalyticsCards";
 import CardChartIncomeXExpense from "@/_components/CardChartIncomeXExpense";
+import ExpensesByCategoryCard from "@/_components/ExpensesByCategoryCard";
 import HeaderBox from "@/_components/HeaderBox";
+import LastTransactionsCard from "@/_components/LastTransactionsCard";
 import { MonthyCardOverview } from "@/_components/MonthyCardOverview";
 import AnalyticsCardsSkeleton from "@/skeleton_components/AnalyticsCardsSkeleton";
 import CardChartIncomeXExpenseSkeleton from "@/skeleton_components/CardChartIncomeXExpenseSkeleton";
+import LastTransactionsCardSkeleton from "@/skeleton_components/LastTransactionsCardSkeleton";
+import MonthyCardOverviewSkeleton from "@/skeleton_components/MonthyCardOverviewSkeleton";
 import { Suspense } from "react";
 
 export default function Dashboard() {
@@ -16,6 +20,7 @@ export default function Dashboard() {
         subtext="Gerencie suas finanças com mais eficiência."
       />
 
+      {/* CARDS AREA */}
       <section className="mt-10">
         <div className="grid grid-cols-1 xl:grid-cols-4 gap-4">
           <Suspense fallback={<AnalyticsCardsSkeleton />}>
@@ -25,13 +30,19 @@ export default function Dashboard() {
       </section>
 
       <section className="grid grid-cols-1 mt-8">
-        <MonthyCardOverview />
+        <Suspense fallback={<MonthyCardOverviewSkeleton />}>
+          <MonthyCardOverview />
+        </Suspense>
       </section>
 
-      <section className="grid grid-cols-1 xl:grid-cols-2 mt-8">
+      <section className="grid grid-cols-1 xl:grid-cols-3 mt-4 gap-4">
         <Suspense fallback={<CardChartIncomeXExpenseSkeleton />}>
           <CardChartIncomeXExpense />
         </Suspense>
+        <Suspense fallback={<LastTransactionsCardSkeleton />}>
+          <LastTransactionsCard />
+        </Suspense>
+        <ExpensesByCategoryCard />
       </section>
     </div>
   );
