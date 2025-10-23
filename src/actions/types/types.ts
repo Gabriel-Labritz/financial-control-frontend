@@ -46,3 +46,9 @@ export type APISummaryBalanceResponse = {
   totalExpenses: number;
   totalBalance: number;
 };
+
+export type APIMonthlyBalanceResponse = {
+  month: string;
+  totalIncomes: number;
+  totalExpenses: number;
+};
