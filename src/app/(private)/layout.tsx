@@ -21,7 +21,7 @@ export default async function PrivateLayout({
     <>
       <SidebarProvider defaultOpen={defaultOpen}>
         <AppSidebar />
-        <main className="w-full overflow-x-hidden relative">
+        <main className="w-full overflow-x-hidden">
           <Header />
           {children}
           <AppFooter />

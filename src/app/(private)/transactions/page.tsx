@@ -7,7 +7,7 @@ export default async function Transactions() {
   const transactions = await getAllTransactionsUser();
 
   return (
-    <div className="p-4">
+    <div className="p-4 h-screen">
       <HeaderBox
         type="title"
         title="Suas Transações"

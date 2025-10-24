@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function AppFooter() {
   return (
-    <footer className="absolute bottom-0 left-0 right-0 w-full px-4 py-8">
+    <footer className="w-full px-4 py-8">
       <div className="flex justify-between items-center">
         <p className="text-sm text-muted-foreground">
-          @2025, Criado por{" "}
+          @2025, Desenvolvido por{" "}
           <span className="text-primary font-semibold">Gabriel Labritz</span>
         </p>
         <div className="flex items-center gap-4 text-primary">
