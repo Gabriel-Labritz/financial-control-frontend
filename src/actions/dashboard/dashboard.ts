@@ -1,6 +1,7 @@
 "use server";
 import { cookies } from "next/headers";
 import {
+  APIExpensesByCategoryResponse,
   APILastTransactionsResponse,
   APIMonthlyBalanceResponse,
   APIResponseError,
@@ -142,6 +143,55 @@ export async function getLastTransactions() {
     };
   } catch (error) {
     console.error("Ocorreu um erro ao carregar as últimas transações:", error);
+
+    return {
+      success: false,
+      error: "Erro de conexão ou exceção desconhecida.",
+    };
+  }
+}
+
+export async function getExpensesByCategory() {
+  const cookieStore = await cookies();
+  const token = cookieStore.get("jwt")?.value;
+
+  try {
+    const res = await fetch(`${API_BASE_URL}/dashboard/expense-by-category`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Cookie: `jwt=${token}`,
+      },
+      next: {
+        tags: [
+          "user-created-transaction",
+          "user-updated-transaction",
+          "user_deleted_transaction",
+        ],
+      },
+    });
+
+    if (!res.ok) {
+      const errorData: APIResponseError = await res.json();
+
+      return {
+        success: false,
+        error:
+          errorData?.message ||
+          `Falha ao carregar as despesas por categorias: ${errorData.statusCodes}`,
+      };
+    }
+    const data: APIExpensesByCategoryResponse[] = await res.json();
+
+    return {
+      success: true,
+      data,
+    };
+  } catch (error) {
+    console.error(
+      "Ocorreu um erro ao carregar as despesas por categoria:",
+      error
+    );
 
     return {
       success: false,

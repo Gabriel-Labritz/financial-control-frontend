@@ -57,3 +57,8 @@ export type APILastTransactionsResponse = {
   message: string;
   userTransactions: Transaction[];
 };
+
+export type APIExpensesByCategoryResponse = {
+  category: string;
+  totalExpenses: number;
+};

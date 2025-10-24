@@ -31,7 +31,7 @@ export default async function CardChartIncomeXExpense() {
   ] as PieChartData[];
 
   return (
-    <Card className="flex flex-col w-full border-none">
+    <Card className="border-none">
       <CardHeader className="items-center pb-0">
         <CardDescription className="text-sm font-medium text-muted-foreground select-none">
           Relação Entradas X Despesas

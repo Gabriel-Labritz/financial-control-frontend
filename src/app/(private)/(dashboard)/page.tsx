@@ -6,6 +6,7 @@ import LastTransactionsCard from "@/_components/LastTransactionsCard";
 import { MonthyCardOverview } from "@/_components/MonthyCardOverview";
 import AnalyticsCardsSkeleton from "@/skeleton_components/AnalyticsCardsSkeleton";
 import CardChartIncomeXExpenseSkeleton from "@/skeleton_components/CardChartIncomeXExpenseSkeleton";
+import ExpensesByCategoryCardSkeleton from "@/skeleton_components/ExpensesByCategoryCardSkeleton";
 import LastTransactionsCardSkeleton from "@/skeleton_components/LastTransactionsCardSkeleton";
 import MonthyCardOverviewSkeleton from "@/skeleton_components/MonthyCardOverviewSkeleton";
 import { Suspense } from "react";
@@ -42,7 +43,9 @@ export default function Dashboard() {
         <Suspense fallback={<LastTransactionsCardSkeleton />}>
           <LastTransactionsCard />
         </Suspense>
-        <ExpensesByCategoryCard />
+        <Suspense fallback={<ExpensesByCategoryCardSkeleton />}>
+          <ExpensesByCategoryCard />
+        </Suspense>
       </section>
     </div>
   );
