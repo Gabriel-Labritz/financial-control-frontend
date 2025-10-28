@@ -1,4 +1,6 @@
 "use client";
+
+import { deleteUserAccount } from "@/actions/user/user";
 import {
   AlertDialogAction,
   AlertDialogCancel,
@@ -8,13 +10,21 @@ import {
 } from "@/components/ui/alert-dialog";
 import { LoaderCircle } from "lucide-react";
 import { useTransition } from "react";
+import { toast } from "sonner";
 
 export default function DeleteUserAccountDialog() {
   const [isPending, startTransaction] = useTransition();
 
-  const handleDeleteTransaction = () => {
+  const handleDeleteUserAccount = () => {
     startTransaction(async () => {
-      // request para deletar a conta aqui!
+      const result = await deleteUserAccount();
+
+      if (!result.success) {
+        toast.error(
+          result.error ||
+            "Ocorreu um erro ao excluir sua conta, tente novamente."
+        );
+      }
     });
   };
   return (
@@ -29,7 +39,7 @@ export default function DeleteUserAccountDialog() {
       <AlertDialogFooter>
         <AlertDialogCancel>Cancelar</AlertDialogCancel>
         <AlertDialogAction
-          onClick={handleDeleteTransaction}
+          onClick={handleDeleteUserAccount}
           disabled={isPending}
         >
           {isPending ? (

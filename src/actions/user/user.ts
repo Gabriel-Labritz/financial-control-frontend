@@ -1,4 +1,5 @@
 "use server";
+
 import { cookies } from "next/headers";
 import {
   APIResponseError,
@@ -7,6 +8,8 @@ import {
 } from "../types/types";
 import { EditProfileSchema } from "@/schemas/user/edit-profile-schema";
 import { revalidateTag } from "next/cache";
+import { redirect } from "next/navigation";
+import { isRedirectError } from "next/dist/client/components/redirect-error";
 
 const API_BASE_URL = process.env.API_URL;
 
@@ -102,6 +105,46 @@ export async function updateUserProfile(formData: EditProfileSchema) {
       "Ocorreu um erro ao atualizar as informações do perfil:",
       error
     );
+
+    return {
+      success: false,
+      error: "Erro de conexão ou exceção desconhecida.",
+    };
+  }
+}
+
+export async function deleteUserAccount() {
+  const cookieStore = await cookies();
+  const token = cookieStore.get("jwt")?.value;
+
+  try {
+    const res = await fetch(`${API_BASE_URL}/user/delete`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Cookie: `jwt=${token}`,
+      },
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      const errorData: APIResponseError = await res.json();
+
+      return {
+        success: false,
+        error:
+          errorData?.message ||
+          `Falha ao excluir a conta do usuário, status: ${errorData.statusCodes}`,
+      };
+    }
+    cookieStore.delete("jwt");
+    redirect("/signin");
+  } catch (error) {
+    if (isRedirectError(error)) {
+      throw error;
+    }
+
+    console.error("Ocorreu um erro ao excluir a conta do usuário:", error);
 
     return {
       success: false,

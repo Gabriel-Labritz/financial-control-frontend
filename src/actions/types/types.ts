@@ -88,3 +88,7 @@ export type APIUpdateUserProfileResponse = {
   message: string;
   user: UserUpdated;
 };
+
+export type APIDeleteUserAccountResponse = {
+  message: string;
+};
