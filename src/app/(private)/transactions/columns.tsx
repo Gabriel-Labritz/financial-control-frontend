@@ -30,14 +30,14 @@ export type Transaction = {
   id: string;
   title: string;
   amount: string;
-  type: "expense" | "income";
+  type: "despesa" | "renda";
   category:
-    | "entertainment"
-    | "health"
-    | "transport"
-    | "food"
-    | "salary"
-    | "other";
+    | "entreterimento"
+    | "saúde"
+    | "transporte"
+    | "alimentação"
+    | "salário"
+    | "outro";
   description: string;
   createdAt: string;
 };
@@ -78,7 +78,7 @@ export const columns: ColumnDef<Transaction>[] = [
 
       return (
         <div>
-          {type === "expense" ? (
+          {type === "despesa" ? (
             <p className="flex items-center gap-2 text-destructive">
               <TrendingDown className="size-5" />-{formatCurrency}
             </p>

@@ -40,7 +40,7 @@ export default async function AnalyticsCards() {
       />
 
       <AnalyticsCardItem
-        cardDescription="Total em entradas"
+        cardDescription="Total em renda"
         amount={resultSummaryBalance.data?.totalIncomes}
         Icon={BanknoteArrowUp}
         isAmountCount

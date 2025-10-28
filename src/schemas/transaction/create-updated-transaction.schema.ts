@@ -10,9 +10,16 @@ export const createUpdateTransactionSchema = z.object({
     .number("* Informe o valor da transação.")
     .gt(0, "* O valor da transação deve ser maior que R$ 0,00")
     .positive("* O valor da transação deve ser positivo"),
-  type: z.enum(["income", "expense"], "* Selecione o tipo da transação."),
+  type: z.enum(["renda", "despesa"], "* Selecione o tipo da transação."),
   category: z.enum(
-    ["food", "transport", "health", "entertainment", "salary", "other"],
+    [
+      "alimentação",
+      "transporte",
+      "saúde",
+      "entreterimento",
+      "salário",
+      "outro",
+    ],
     "* Selecione a categoria da transação."
   ),
   description: z

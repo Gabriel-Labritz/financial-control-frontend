@@ -34,7 +34,7 @@ export default async function CardChartIncomeXExpense() {
     <Card className="border-none">
       <CardHeader className="items-center pb-0">
         <CardDescription className="text-sm font-medium text-muted-foreground select-none">
-          Relação Entradas X Despesas
+          Relação Renda X Despesa
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">

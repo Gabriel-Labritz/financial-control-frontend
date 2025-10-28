@@ -62,32 +62,32 @@ export default function UpdateTransactionForm({
 
   const categoriesItems = [
     {
-      value: "food",
+      value: "alimentação",
       title: "Alimentação",
       icon: Hamburger,
     },
     {
-      value: "transport",
+      value: "transporte",
       title: "Transporte",
       icon: Bus,
     },
     {
-      value: "health",
+      value: "saúde",
       title: "Saúde",
       icon: HeartPulse,
     },
     {
-      value: "entertainment",
+      value: "entreterimento",
       title: "Entreterimento",
       icon: Drama,
     },
     {
-      value: "salary",
+      value: "salário",
       title: "Salário",
       icon: DollarSign,
     },
     {
-      value: "other",
+      value: "outro",
       title: "Outro",
       icon: Ellipsis,
     },
@@ -158,13 +158,13 @@ export default function UpdateTransactionForm({
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="income">
+                      <SelectItem value="renda">
                         <BanknoteArrowUp />
-                        Entrada
+                        Renda
                       </SelectItem>
-                      <SelectItem value="expense">
+                      <SelectItem value="despesa">
                         <BanknoteArrowDown />
-                        Saída
+                        Despesa
                       </SelectItem>
                     </SelectContent>
                   </Select>

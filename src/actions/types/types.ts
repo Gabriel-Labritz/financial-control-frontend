@@ -62,3 +62,29 @@ export type APIExpensesByCategoryResponse = {
   category: string;
   totalExpenses: number;
 };
+
+export type User = {
+  id: string;
+  name: string;
+  email: string;
+  profileImageUrl: string | null;
+  createdAt: string;
+};
+
+export type APIUserProfileResponse = {
+  message: string;
+  user: User;
+};
+
+export type UserUpdated = {
+  id: string;
+  name: string;
+  email: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type APIUpdateUserProfileResponse = {
+  message: string;
+  user: UserUpdated;
+};

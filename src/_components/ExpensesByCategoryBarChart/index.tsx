@@ -12,23 +12,23 @@ const chartConfig = {
   expenses: {
     label: "Despesas: R$",
   },
-  entertainment: {
+  entreterimento: {
     label: "Entreterimento",
     color: "var(--chart-2)",
   },
-  health: {
+  saúde: {
     label: "Saúde",
     color: "var(--chart-1)",
   },
-  food: {
+  alimentação: {
     label: "Alimentação",
     color: "var(--chart-3)",
   },
-  transport: {
+  transporte: {
     label: "Transporte",
     color: "var(--chart-4)",
   },
-  other: {
+  outro: {
     label: "Outro",
     color: "var(--chart-5)",
   },

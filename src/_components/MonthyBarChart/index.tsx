@@ -23,11 +23,11 @@ interface MonthlyAreaChartProps {
 export default function MonthlyBarChart({ data }: MonthlyAreaChartProps) {
   const chartConfig = {
     income: {
-      label: "Entradas",
+      label: "Renda",
       color: "var(--chart-1)",
     },
     expense: {
-      label: "Despesas",
+      label: "Despesa",
       color: "var(--chart-2)",
     },
   } satisfies ChartConfig;

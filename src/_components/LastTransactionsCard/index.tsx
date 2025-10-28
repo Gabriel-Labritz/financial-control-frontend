@@ -40,12 +40,12 @@ export default async function LastTransactionsCard() {
             <div>
               <p
                 className={`font-semibold text-sm ${
-                  transaction.type === "expense"
+                  transaction.type === "despesa"
                     ? "text-chart-2"
                     : "text-chart-1"
                 }`}
               >
-                {transaction.type === "expense"
+                {transaction.type === "despesa"
                   ? `-${formatCurrency(Number(transaction.amount))}`
                   : `+${formatCurrency(Number(transaction.amount))}`}
               </p>

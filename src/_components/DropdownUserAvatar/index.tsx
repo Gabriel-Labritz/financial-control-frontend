@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import UserAvatar from "../UserAvatar";
 import { LogOut, User } from "lucide-react";
+import Link from "next/link";
 
 export default function DropdownUserAvatar() {
   return (
@@ -18,10 +19,14 @@ export default function DropdownUserAvatar() {
       <DropdownMenuContent align="end">
         <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <User />
-          Perfil
-        </DropdownMenuItem>
+
+        <Link href="/profile">
+          <DropdownMenuItem>
+            <User />
+            Perfil
+          </DropdownMenuItem>
+        </Link>
+
         <DropdownMenuItem>
           <LogOut />
           Sair
