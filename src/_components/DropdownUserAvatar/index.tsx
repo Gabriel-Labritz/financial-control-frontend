@@ -7,8 +7,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import UserAvatar from "../UserAvatar";
-import { LogOut, User } from "lucide-react";
+import { User } from "lucide-react";
 import Link from "next/link";
+import DropdownLogoutItem from "../DropdownLogoutItem";
 
 export default function DropdownUserAvatar() {
   return (
@@ -26,11 +27,7 @@ export default function DropdownUserAvatar() {
             Perfil
           </DropdownMenuItem>
         </Link>
-
-        <DropdownMenuItem>
-          <LogOut />
-          Sair
-        </DropdownMenuItem>
+        <DropdownLogoutItem />
       </DropdownMenuContent>
     </DropdownMenu>
   );

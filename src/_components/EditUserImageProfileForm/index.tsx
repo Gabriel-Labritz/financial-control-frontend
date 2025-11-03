@@ -9,7 +9,8 @@ import {
   imageProfileSchema,
 } from "@/schemas/user/image-profile-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useState } from "react";
+import { LoaderCircle } from "lucide-react";
+import { useEffect, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
@@ -22,23 +23,27 @@ export default function EditUserImageProfileForm() {
   } = useForm<ImageProfileSchema>({
     resolver: zodResolver(imageProfileSchema),
   });
+  const [isPending, startTransaction] = useTransition();
 
   const onSubmit = async (data: ImageProfileSchema) => {
-    const formDataToSend = new FormData();
-    formDataToSend.append("image", data.image.item(0)!);
+    startTransaction(async () => {
+      const formDataToSend = new FormData();
+      formDataToSend.append("image", data.image.item(0)!);
 
-    const result = await updateUserProfileImage(formDataToSend);
+      const result = await updateUserProfileImage(formDataToSend);
 
-    if (result.success) {
-      toast.success(
-        result.data?.message || "Sua foto de perfil foi atualizada com sucesso!"
-      );
-    } else {
-      toast.error(
-        result?.error ||
-          "Ocorreu um erro ao atualizar sua foto de perfil, tente novamente."
-      );
-    }
+      if (result.success) {
+        toast.success(
+          result.data?.message ||
+            "Sua foto de perfil foi atualizada com sucesso!"
+        );
+      } else {
+        toast.error(
+          result?.error ||
+            "Ocorreu um erro ao atualizar sua foto de perfil, tente novamente."
+        );
+      }
+    });
   };
 
   useEffect(() => {
@@ -81,7 +86,16 @@ export default function EditUserImageProfileForm() {
                   {errors.image.message}
                 </p>
               )}
-              <Button type="submit">Enviar nova imagem</Button>
+              <Button type="submit" disabled={isPending}>
+                {isPending ? (
+                  <>
+                    <LoaderCircle className="animate-spin" />
+                    Aguarde...
+                  </>
+                ) : (
+                  "Enviar imagem"
+                )}
+              </Button>
             </Field>
           </FieldGroup>
         </FieldSet>

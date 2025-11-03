@@ -1,7 +1,7 @@
 "use client";
 
 import { SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar";
-import { Home, Landmark, Search, Settings } from "lucide-react";
+import { Home, Landmark, Settings } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -27,15 +27,12 @@ export default function SidebarNav() {
           </Link>
         </SidebarMenuButton>
         <SidebarMenuButton asChild>
-          <Link href="#">
-            <Search color="var(--color-primary)" />
-            <span>Buscar</span>
-          </Link>
-        </SidebarMenuButton>
-        <SidebarMenuButton asChild>
-          <Link href="#">
+          <Link
+            href="/profile"
+            onMouseEnter={() => router.prefetch("/profile")}
+          >
             <Settings color="var(--color-primary)" />
-            <span>Configurações</span>
+            <span>Conta</span>
           </Link>
         </SidebarMenuButton>
       </SidebarMenuItem>
