@@ -11,7 +11,7 @@ import {
 import { revalidateTag } from "next/cache";
 import { CreateUpdateTransactionSchema } from "@/schemas/transaction/create-updated-transaction.schema";
 
-const API_BASE_URL = process.env.API_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export async function getAllTransactionsUser() {
   const cookieStore = await cookies();

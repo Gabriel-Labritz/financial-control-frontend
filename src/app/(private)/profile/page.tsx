@@ -12,18 +12,20 @@ export default async function Profile() {
   const result = await getUserProfile();
   if (!result.user) return;
 
+  const profileImageUrl = result.user.profileImageUrl;
+
   return (
     <div className="p-4 h-screen">
       <HeaderBox
         type="title"
         title="Sua conta"
-        subtext="Aqui você pode visualizar e editar as informações de sua conta."
+        subtext="Visualize as informações de sua conta."
       />
 
       <section className="relative w-full h-[300px] min-h-[250px] bg-[url('./assets/bg-profile-page.png')] bg-cover bg-center mt-10 rounded-lg">
         <div className="absolute flex items-center justify-between -bottom-14 left-1/2 transform -translate-x-1/2 w-full xl:w-[80%] p-6 bg-gradient-to-r from-muted/94 to-muted/90 mx-auto rounded-lg">
           <UserProfileAvatar
-            srcImageUrl="https://github.com/shadcn.png"
+            srcImageUrl={profileImageUrl}
             userName={result.user.name}
             userEmail={result.user.email}
           />

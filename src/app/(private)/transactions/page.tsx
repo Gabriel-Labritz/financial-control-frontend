@@ -11,7 +11,7 @@ export default async function Transactions() {
       <HeaderBox
         type="title"
         title="Suas Transações"
-        subtext="visualize e gerencie todas transações reazlizadas por você."
+        subtext="Visualize e gerencie todas transações realizadas por você."
       />
       <section className="mt-10">
         <DataTable

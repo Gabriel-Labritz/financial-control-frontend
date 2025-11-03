@@ -92,3 +92,12 @@ export type APIUpdateUserProfileResponse = {
 export type APIDeleteUserAccountResponse = {
   message: string;
 };
+
+export type APIUpdatedProfileImageResponse = {
+  message: string;
+  user: {
+    id: string;
+    name: string;
+    profileImageUrl: string;
+  };
+};
