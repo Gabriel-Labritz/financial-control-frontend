@@ -16,6 +16,7 @@ import {
 } from "@/schemas/user/edit-profile-schema";
 import { updateUserProfile } from "@/actions/user/user";
 import { toast } from "sonner";
+import { LoaderCircle } from "lucide-react";
 
 interface EditProfileFormProps {
   userData: User;
@@ -35,10 +36,10 @@ export default function EditProfileForm({ userData }: EditProfileFormProps) {
       confirmPassword: "",
     },
   });
-  const [isPending, startTransaction] = useTransition();
+  const [isPending, startTransition] = useTransition();
 
   const onSubmit = async (formData: EditProfileSchema) => {
-    startTransaction(async () => {
+    startTransition(async () => {
       const result = await updateUserProfile(formData);
 
       if (result.success) {
@@ -56,7 +57,7 @@ export default function EditProfileForm({ userData }: EditProfileFormProps) {
   };
 
   return (
-    <form method="POST" onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <FieldSet>
         <FieldGroup>
           <Field>
@@ -121,7 +122,14 @@ export default function EditProfileForm({ userData }: EditProfileFormProps) {
           </Button>
         </DialogClose>
         <Button type="submit" disabled={isPending || !isDirty}>
-          Editar
+          {isPending ? (
+            <>
+              <LoaderCircle className="animate-spin" />
+              Aguarde...
+            </>
+          ) : (
+            "Editar"
+          )}
         </Button>
       </DialogFooter>
     </form>

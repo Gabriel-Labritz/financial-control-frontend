@@ -14,7 +14,13 @@ import { useEffect, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
-export default function EditUserImageProfileForm() {
+interface EditUserImageProfileFormProps {
+  setOpen: (open: boolean) => void;
+}
+
+export default function EditUserImageProfileForm({
+  setOpen,
+}: EditUserImageProfileFormProps) {
   const [preview, setPreview] = useState<string | null>(null);
   const {
     register,
@@ -37,6 +43,7 @@ export default function EditUserImageProfileForm() {
           result.data?.message ||
             "Sua foto de perfil foi atualizada com sucesso!"
         );
+        setOpen(false);
       } else {
         toast.error(
           result?.error ||

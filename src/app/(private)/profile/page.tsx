@@ -1,14 +1,10 @@
-import EditProfileDialog from "@/_components/EditProfileDialog";
+import EditProfileModalWrapper from "@/_components/EditProfileModalWrapper";
 import HeaderBox from "@/_components/HeaderBox";
 import UserProfileAvatar from "@/_components/UserProfileAvatar";
 import UserProfileInfoCard from "@/_components/UserProfileInfoCard";
 import { getUserProfile } from "@/actions/user/user";
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
 import UserProfileAvatarSkeleton from "@/skeleton_components/UserProfileAvatarSkeleton";
 import UserProfileInfoCardSkeleton from "@/skeleton_components/UserProfileInfoCardSkeleton";
-import { DialogTrigger } from "@radix-ui/react-dialog";
-import { Pencil } from "lucide-react";
 import { Suspense } from "react";
 
 export default async function Profile() {
@@ -35,17 +31,7 @@ export default async function Profile() {
             />
           </Suspense>
 
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button type="button" variant="link">
-                <Pencil />
-                Editar
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <EditProfileDialog userData={result.user} />
-            </DialogContent>
-          </Dialog>
+          <EditProfileModalWrapper userData={result.user} />
         </div>
       </section>
 

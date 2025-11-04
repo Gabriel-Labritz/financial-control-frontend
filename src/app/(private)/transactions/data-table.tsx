@@ -24,8 +24,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import CreateTransactionModal from "@/_components/CreateTransactionDialog";
+import CreateTransactionModalWrapper from "@/_components/CreateTransactionModalWrapper";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -62,16 +61,7 @@ export function DataTable<TData, TValue>({
   return (
     <>
       <div className="flex flex-col md:flex-row gap-2">
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button type="button" className="h-12">
-              Nova Transação
-            </Button>
-          </DialogTrigger>
-          <DialogContent>
-            <CreateTransactionModal />
-          </DialogContent>
-        </Dialog>
+        <CreateTransactionModalWrapper />
         <Input
           placeholder="Buscar por transações..."
           value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}

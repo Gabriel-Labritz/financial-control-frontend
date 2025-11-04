@@ -37,15 +37,17 @@ import { toast } from "sonner";
 
 interface TransactionFormProps {
   transactionData?: Transaction;
+  setOpen: (open: boolean) => void;
 }
 
 export default function UpdateTransactionForm({
   transactionData,
+  setOpen,
 }: TransactionFormProps) {
   const {
     register,
     reset,
-    formState: { errors },
+    formState: { errors, isDirty },
     handleSubmit,
     control,
   } = useForm<CreateUpdateTransactionSchema>({
@@ -104,6 +106,7 @@ export default function UpdateTransactionForm({
           result.data?.message || "A sua transação foi atualizada com sucesso!"
         );
         reset();
+        setOpen(false);
       } else {
         toast.error(
           result?.error || "Erro ao atualizar a transação, tente novamente."
@@ -113,7 +116,7 @@ export default function UpdateTransactionForm({
   };
 
   return (
-    <form method="POST" onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <FieldSet>
         <FieldGroup>
           <Field>
@@ -225,7 +228,7 @@ export default function UpdateTransactionForm({
             Voltar
           </Button>
         </DialogClose>
-        <Button type="submit" disabled={isPending}>
+        <Button type="submit" disabled={isPending || !isDirty}>
           {isPending ? (
             <>
               <LoaderCircle className="animate-spin" />

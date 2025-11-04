@@ -34,7 +34,13 @@ import { useTransition } from "react";
 import { toast } from "sonner";
 import { createTransaction } from "@/actions/transaction/transaction";
 
-export default function CreateTransactionForm() {
+interface CreateTransactionFormProps {
+  setOpen: (open: boolean) => void;
+}
+
+export default function CreateTransactionForm({
+  setOpen,
+}: CreateTransactionFormProps) {
   const {
     register,
     reset,
@@ -88,6 +94,7 @@ export default function CreateTransactionForm() {
           result.data?.message || "A sua transação foi registrada com sucesso!"
         );
         reset();
+        setOpen(false);
       } else {
         toast.error(
           result?.error ||

@@ -51,7 +51,7 @@ export default function SignInForm() {
   };
 
   return (
-    <form method="POST" onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className="w-full">
         {/* FEEDBACK AREA */}
         <div>

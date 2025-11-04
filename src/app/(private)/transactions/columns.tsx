@@ -1,27 +1,19 @@
 "use client";
 
-import DeleteTransactionAlertDialog from "@/_components/DeleteTransactionAlertDialog";
-import UpdateTransactionDialog from "@/_components/UpdateTransactionDialog";
-import { AlertDialog, AlertDialogContent } from "@/components/ui/alert-dialog";
-
+import DeleteTransactionModalWrapper from "@/_components/DeleteTransactionModalWrapper";
+import UpdateTransactionModalWrapper from "@/_components/UpdateTransactionModalWrapper";
 import { Button } from "@/components/ui/button";
-import { DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { AlertDialogTrigger } from "@radix-ui/react-alert-dialog";
-import { Dialog } from "@radix-ui/react-dialog";
 import { ColumnDef } from "@tanstack/react-table";
 import {
   ArrowUpDown,
   MoreHorizontal,
-  Pencil,
-  Trash,
   TrendingDown,
   TrendingUp,
 } from "lucide-react";
@@ -150,33 +142,9 @@ export const columns: ColumnDef<Transaction>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Ações</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <Dialog>
-              <DialogTrigger className="w-full">
-                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-                  <Pencil />
-                  Editar
-                </DropdownMenuItem>
-              </DialogTrigger>
-              <DialogContent>
-                <UpdateTransactionDialog id={transaction.id} />
-              </DialogContent>
-            </Dialog>
-            <AlertDialog>
-              <AlertDialogTrigger asChild>
-                <DropdownMenuItem
-                  className="text-destructive"
-                  onSelect={(e) => {
-                    e.preventDefault();
-                  }}
-                >
-                  <Trash color="var(--color-destructive)" />
-                  Excluir
-                </DropdownMenuItem>
-              </AlertDialogTrigger>
-              <AlertDialogContent>
-                <DeleteTransactionAlertDialog transactionId={transaction.id} />
-              </AlertDialogContent>
-            </AlertDialog>
+
+            <UpdateTransactionModalWrapper id={transaction.id} />
+            <DeleteTransactionModalWrapper id={transaction.id} />
           </DropdownMenuContent>
         </DropdownMenu>
       );
