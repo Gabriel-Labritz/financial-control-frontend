@@ -8,7 +8,7 @@ import {
   APIUserProfileResponse,
 } from "../types/types";
 import { EditProfileSchema } from "@/schemas/user/edit-profile-schema";
-import { revalidateTag } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 import { isRedirectError } from "next/dist/client/components/redirect-error";
 
@@ -180,6 +180,7 @@ export async function updateUserProfileImage(fileData: FormData) {
     }
     const data: APIUpdatedProfileImageResponse = await res.json();
     revalidateTag("user_updated-image-profile");
+    revalidatePath("/profile");
 
     return {
       success: true,
