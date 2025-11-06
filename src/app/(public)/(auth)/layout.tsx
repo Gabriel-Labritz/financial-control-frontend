@@ -21,7 +21,9 @@ export default function AuthLayout({
       <div className="hidden xl:flex items-center justify-center xl:w-[65%] bg-[url('./assets/auth_image_background.png')] bg-cover bg-center h-screen">
         <div className="flex items-center select-none">
           <ChartArea className="size-22" />
-          <h2 className="text-5xl font-bold tracking-tight">FinanCash</h2>
+          <h2 className="text-5xl font-bold tracking-tight text-foreground">
+            FinanCash
+          </h2>
         </div>
       </div>
     </div>
