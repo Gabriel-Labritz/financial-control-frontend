@@ -54,7 +54,7 @@ export default function SignInForm() {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="w-full">
         {/* FEEDBACK AREA */}
-        <div>
+        <div className="mb-6">
           {successMessage && (
             <div className="flex items-center justify-center gap-2 text-primary text-sm font-medium select-none">
               <BadgeCheck />

@@ -24,7 +24,9 @@ export default function UserProfileAvatar({
         <EditUserAvatarModalWrapper />
       </div>
       <div className="flex flex-col">
-        <p className="text-xl font-semibold tracking-tight">{userName}</p>
+        <p className="text-[18px] md:text-xl font-semibold tracking-tight">
+          {userName}
+        </p>
         <span className="text-sm text-muted-foreground">{userEmail}</span>
       </div>
     </div>

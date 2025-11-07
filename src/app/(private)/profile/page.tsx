@@ -21,7 +21,7 @@ export default async function Profile() {
         subtext="Visualize as informações de sua conta."
       />
 
-      <section className="relative w-full h-[300px] min-h-[250px] bg-[url('./assets/bg-profile-page.png')] bg-cover bg-center mt-10 rounded-lg">
+      <section className="relative w-full h-[300px] min-h-[250px] bg-[url('/images/bg-profile-page.png')] bg-cover bg-center mt-10 rounded-lg">
         <div className="absolute flex items-center justify-between -bottom-14 left-1/2 transform -translate-x-1/2 w-full xl:w-[80%] p-6 bg-gradient-to-r from-muted/94 to-muted/90 mx-auto rounded-lg">
           <Suspense fallback={<UserProfileAvatarSkeleton />}>
             <UserProfileAvatar
