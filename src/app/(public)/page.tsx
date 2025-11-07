@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Marquee } from "@/components/ui/marquee";
 import TechLogoCard from "@/_components/TechLogoCard";
 import AppFooter from "@/_components/Footer";
+
 export default function LandingPage() {
   const technologies = [
     {

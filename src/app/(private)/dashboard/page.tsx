@@ -17,7 +17,6 @@ export default function Dashboard() {
       <HeaderBox
         type="greeting"
         title="Bem vindo"
-        user="Gabriel"
         subtext="Gerencie suas finanças com mais eficiência."
       />
 

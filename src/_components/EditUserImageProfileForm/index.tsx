@@ -13,6 +13,7 @@ import { LoaderCircle } from "lucide-react";
 import { useEffect, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import ErrorInputMessage from "../ErrorInputMessage";
 
 interface EditUserImageProfileFormProps {
   setOpen: (open: boolean) => void;
@@ -88,10 +89,8 @@ export default function EditUserImageProfileForm({
                   if (file) setPreview(URL.createObjectURL(file));
                 }}
               />
-              {errors.image && (
-                <p className="text-[12px] text-destructive">
-                  {errors.image.message}
-                </p>
+              {errors.image && errors.image.message && (
+                <ErrorInputMessage errorMessage={errors.image.message} />
               )}
               <Button type="submit" disabled={isPending}>
                 {isPending ? (
