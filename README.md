@@ -1,4 +1,4 @@
-# FinanCash 💵�
+# FinanCash 💵
 
 Aplicação de controle financeiro, permitindo aos usuários gerenciar suas rendas e despesas, visualizarem gráficos responsivos com informações na dashboard , adicionar, atualizar e remover transações.
 
@@ -12,10 +12,13 @@ Esse projeto foi desenvolvido com foco em:
 - **Estruturação de componentes reutilizáveis**
 - **Server Actions**
 - **clean code**
-- 
+
+
 ## Funcionalidades da aplicação ⚙
 
 - 🔒 **Autenticação**
+- 📊 **Visualização em gráficos responsivos na dashboard**
+- 💵 **Controle de transações (criar, atualizar e excluir)**
 
 ## Tecnologias 🛠
 
