@@ -9,7 +9,7 @@ https://financial-control-frontend-eight.vercel.app
 
 Este projeto foi construído com foco em performance, segurança, experiência do usuário (UX) e escalabilidade, refletindo a arquitetura Full-Stack moderna.
 
-- **Frontend (Next.js)** Utiliza as features mais recentes presentes no NextJS: App router, cache (revalidate tags e path) e middeware e React.
+- **Frontend (Next.js)** Utiliza as features mais recentes presentes no NextJS: App router, cache (revalidate tags e path) e middeware.
 - **Backend Robusto (NestJS):** Separação clara entre frontend e backend, garantindo escalabilidade e lógica de negócio bem definida.
 - **Segurança com JWT:** Implementação completa do sistema de autenticação via JWT (Json Web Token), garantindo endpoints seguros e gerenciamento dos cookies e sessão.
 - **Clean Code e Componentização:** Estrutura de código modular, com separações de responsabilidade entre componentes e serviços.
