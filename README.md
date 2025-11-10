@@ -39,9 +39,10 @@ Este projeto foi construído com foco em performance, segurança e experiência 
 
 ```bash
 ## Clone o repositório
-git clone
+git clone https://github.com/Gabriel-Labritz/financial-control-frontend
 
 ## Acesse a pasta
+cd financial-control-frontend
 
 # Instale as dependências
 npm install
@@ -55,6 +56,8 @@ npm run dev
 
 ```bash
   ### Crie um arquivo .env na raiz do projeto com:
+
+  NEXT_PUBLIC_API_URL=
 ```
 
 ## Autor 🙋‍♂️
