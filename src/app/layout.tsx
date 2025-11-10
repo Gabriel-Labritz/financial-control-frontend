@@ -17,6 +17,9 @@ const robotoSans = Roboto({
 export const metadata: Metadata = {
   title: "FinanCash",
   description: "Gerencie suas finanças",
+  icons: {
+    icon: "/images/favicon.svg",
+  },
 };
 
 export default function RootLayout({

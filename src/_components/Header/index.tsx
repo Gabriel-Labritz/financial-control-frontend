@@ -14,7 +14,7 @@ export default function Header() {
       {/* RIGHT */}
       <nav className="flex items-center gap-1">
         <Button variant="ghost" size="icon" className="rounded-full">
-          <Link href="#">
+          <Link href="https://github.com/Gabriel-Labritz/financial-control-frontend">
             <Github />
             <span className="sr-only">Acesse o repositório do projeto</span>
           </Link>

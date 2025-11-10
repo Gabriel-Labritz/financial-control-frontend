@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function AppFooter() {
   return (
     <footer className="w-full px-4 py-8">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-sm text-muted-foreground">
           @2025, Desenvolvido por{" "}
           <span className="text-primary font-semibold">Gabriel Labritz</span>
