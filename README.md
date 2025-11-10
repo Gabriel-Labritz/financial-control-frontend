@@ -57,7 +57,7 @@ npm run dev
 ```bash
   ### Crie um arquivo .env na raiz do projeto com:
 
-  NEXT_PUBLIC_API_URL=
+  NEXT_PUBLIC_API_URL=soon
 ```
 
 ## Autor 🙋‍♂️
