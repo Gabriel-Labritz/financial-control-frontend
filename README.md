@@ -7,7 +7,7 @@ https://financial-control-frontend-eight.vercel.app
 
 ## Diferenciais do projeto 🧠
 
-Este projeto foi construído com foco em performance, segurança e experiência do usuário (UX), refletindo a arquitetura Full-Stack moderna.
+Este projeto foi construído com foco em performance, segurança, experiência do usuário (UX) e escalabilidade, refletindo a arquitetura Full-Stack moderna.
 
 - **Frontend (Next.js)** Utiliza as features mais recentes presentes no NextJS: App router, cache (revalidate tags e path) e middeware e React.
 - **Backend Robusto (NestJS):** Separação clara entre frontend e backend, garantindo escalabilidade e lógica de negócio bem definida.
