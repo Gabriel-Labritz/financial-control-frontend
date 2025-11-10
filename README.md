@@ -5,13 +5,13 @@ Aplicação moderna e robusta para gerenciamento financeiro pessoal. Permite aos
 ## Acesse o projeto (Vercel) 💻
 https://financial-control-frontend-eight.vercel.app
 
-## Sobre o projeto 🧠
+## Diferenciais do projeto 🧠
 
-Este projeto foi construído com foco em performance, segurança e experiência do usuário (UX), demonstrando proficiência em arquitetura Full-Stack moderna.
+Este projeto foi construído com foco em performance, segurança e experiência do usuário (UX), refletindo a arquitetura Full-Stack moderna.
 
-- **Frontend com Next.js App Router:** Utiliza a arquitetura mais recente para renderização otimizada, aproveitando a reatividade do React.
+- **Frontend (Next.js)** Utiliza as features mais recentes presentes no NextJS: App router, cache (revalidate tags e path) e middeware e React.
 - **Backend Robusto (NestJS):** Separação clara entre frontend e backend, garantindo escalabilidade e lógica de negócio bem definida.
-- **Segurança com JWT:** Implementação completa do sistema de autenticação via JWT (Json Web Token), garantindo endpoints seguros e gerenciamento dos cookies.
+- **Segurança com JWT:** Implementação completa do sistema de autenticação via JWT (Json Web Token), garantindo endpoints seguros e gerenciamento dos cookies e sessão.
 - **Clean Code e Componentização:** Estrutura de código modular, com separações de responsabilidade entre componentes e serviços.
 - **UX:**
   - **Skeletons Loaders (Shadcn/ui):** São exibidos durante o carregamento dos dados servidos pela API.
