@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FinanCash - Full Stack 💵
 
-## Getting Started
+Aplicação moderna e robusta para gerenciamento financeiro pessoal. Permite aos usuários adiministrar rendas e despesas, visualizar gráficos responsivos na dashboard , realizar operações de CRUD (criar, atualizar e excluir) em transações, e gerenciar dados do perfil (incluindo upload de imagem).
 
-First, run the development server:
+## Acesse o projeto (Vercel) 💻
+https://financial-control-frontend-eight.vercel.app
+
+## Diferenciais do projeto 🧠
+
+Este projeto foi construído com foco em performance, segurança, experiência do usuário (UX) e escalabilidade, refletindo a arquitetura Full-Stack moderna.
+
+- **Frontend (Next.js)** Utiliza as features mais recentes presentes no NextJS: App router, cache (revalidate tags e path) e middeware.
+- **Backend Robusto (NestJS):** Separação clara entre frontend e backend, garantindo escalabilidade e lógica de negócio bem definida.
+- **Segurança com JWT:** Implementação completa do sistema de autenticação via JWT (Json Web Token), garantindo endpoints seguros e gerenciamento dos cookies e sessão.
+- **Clean Code e Componentização:** Estrutura de código modular, com separações de responsabilidade entre componentes e serviços.
+- **UX:**
+  - **Skeletons Loaders (Shadcn/ui):** São exibidos durante o carregamento dos dados servidos pela API.
+  - **Feedback Toast:** Notificações de sucesso e erros para todas as interações com a API.
+
+
+## Funcionalidades da aplicação ⚙
+
+- 🔒 **Autenticação completa:** Cadastro, login e logout seguros via JWT.
+- 📊 **Dashboard Analítico**: Visualização de saldos, receitas e despesas com gráficos dinâmicos e responsivos.
+- 💵 **Gestão de transações (CRUD):** Criação, edição e exclusão de lançamentos financeiros.
+- 👤 **Gerenciamento de perfil:** Atualização de dados do perfil e upload de imagem.
+
+## Ferramentas utilizadas 🛠
+
+- [NextJS](https://nextjs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Shadcn](https://ui.shadcn.com)
+- [TailwindCSS](https://tailwindcss.com)
+- [NestJS](https://nestjs.com)
+- [Postgresql](https://www.postgresql.org)
+- [JsonWebToken](https://www.jwt.io)
+
+## Como rodar o projeto localmente ✔
 
 ```bash
+## Clone o repositório
+git clone https://github.com/Gabriel-Labritz/financial-control-frontend
+
+## Acesse a pasta
+cd financial-control-frontend
+
+# Instale as dependências
+npm install
+
+# Rode o projeto
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Variáveis de ambiente 🛠
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  ### Crie um arquivo .env na raiz do projeto com:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  NEXT_PUBLIC_API_URL=soon
+```
 
-## Learn More
+## Autor 🙋‍♂️
 
-To learn more about Next.js, take a look at the following resources:
+Gabriel Labritz - Dev Júnior
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [GitHub](https://github.com/Gabriel-Labritz)
+- [LinkedIn](https://www.linkedin.com/in/gabriel-labritz-199499229/)
